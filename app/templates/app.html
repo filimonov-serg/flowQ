@@ -1,3 +1,5 @@
 <h1>FlowQ</h1>
-
-<npc></npc>
+<button (click)="selectNpc($event)">Sel</button>
+<input [(ngModel)]="replicaText">
+<button (click)="addReplica()">Add replica</button>
+<npc [npc]="selectedNpc"></npc>

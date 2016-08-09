@@ -1,10 +1,12 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Npc} from '../model/npc';
+
 
 @Component({
 	selector: 'npc',
-	template: '<div>{{name}}</div>'
+	template: '<div *ngIf="npc">{{npc.name}}</div>'
 })
 export class NpcComponent {
-	id: number;
-	name: string;
+	@Input()
+	npc: Npc;
 }

@@ -9,13 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var npc_1 = require('../model/npc');
 var NpcComponent = (function () {
     function NpcComponent() {
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', npc_1.Npc)
+    ], NpcComponent.prototype, "npc", void 0);
     NpcComponent = __decorate([
         core_1.Component({
             selector: 'npc',
-            template: '<div>{{name}}</div>'
+            template: '<div *ngIf="npc">{{npc.name}}</div>'
         }), 
         __metadata('design:paramtypes', [])
     ], NpcComponent);

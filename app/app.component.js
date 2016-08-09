@@ -12,11 +12,29 @@ var core_1 = require('@angular/core');
 var npc_component_1 = require('./comp/npc.component');
 var AppComponent = (function () {
     function AppComponent() {
-        this.npc = {
-            id: 1,
-            name: "Test npc"
-        };
     }
+    //_tmp: Npc = {id: 1, name: "Limon"};
+    AppComponent.prototype.selectNpc = function (e) {
+        this.selectedNpc = { id: 1, name: "Limon" };
+        console.log(this.selectedNpc, e);
+    };
+    AppComponent.prototype.addReplica = function () {
+        var ans = [{
+                id: 1,
+                order: 1,
+                text: "Answer 1"
+            }, {
+                id: 2,
+                order: 2,
+                text: "Answer 2"
+            }];
+        var newReplica = {
+            parentNpc: this.selectedNpc,
+            text: this.replicaText,
+            answers: ans
+        };
+        console.log(newReplica);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'flow-q',
